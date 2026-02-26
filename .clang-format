@@ -21,13 +21,13 @@ AlignConsecutiveAssignments: AcrossEmptyLines
 AlignConsecutiveDeclarations: AcrossEmptyLines
 AlignTrailingComments: true
 
-# --- Parameter & Constructor Layout ---
-# Keeps function parameters on one long line instead of stacking them
-BinPackParameters: true
-# Similarly keeps constructor arguments on one line when possible
-BinPackArguments: true
-# Aligns constructor colon/commas if they DO eventually wrap
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
+# --- Constructor Layout (The "Leading Comma" Style) ---
+# Puts the colon and commas at the start of the line
+BreakConstructorInitializers: BeforeComma
+# Forces each initializer onto its own line
+PackConstructorInitializers: Never
+# Matches the indentation of your class body
+ConstructorInitializerIndentWidth: 4
 
 # --- Extra Cleanliness ---
 # Ensures braces are on the same line (Attach)
@@ -38,7 +38,6 @@ ColumnLimit: 100
 MaxEmptyLinesToKeep: 1
 
 # --- Header Management ---
-
 # Keeps your includes tidy by alphabetizing them. 
 # This prevents duplicate includes and makes finding a specific header much faster.
 SortIncludes: true
