@@ -18,7 +18,13 @@ PointerAlignment: Right
 
 # --- Column Alignment ---
 AlignConsecutiveAssignments: AcrossEmptyLines
-AlignConsecutiveDeclarations: AcrossEmptyLines
+
+# Align variables in a grid, but DO NOT align function names
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: true
+  AlignFunctionDeclarations: false
+
 AlignTrailingComments: true
 
 # --- Constructor Layout (The "Leading Comma" Style) ---
