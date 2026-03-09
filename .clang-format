@@ -3,23 +3,17 @@
 BasedOnStyle: LLVM
 
 # --- Indentation & Access Modifiers ---
-# Use 4 spaces for general code
 IndentWidth: 4
-# This controls the 'public:' and 'private:' indent. 
-# -4 moves it 4 spaces left (flush with the class keyword)
-# -2 would give it a 2-space "half-indent"
 AccessModifierOffset: -4
-# Indents code inside namespaces for better visual hierarchy
 NamespaceIndentation: All
 
-# --- Pointer Alignment (The 'Right' Way) ---
-# This makes it 'int *ptr' instead of 'int* ptr'
+# --- Pointer Alignment ---
 PointerAlignment: Right
 
 # --- Column Alignment ---
+# Simplified for compatibility
 AlignConsecutiveAssignments: AcrossEmptyLines
 
-# Align variables in a grid, but DO NOT align function names
 AlignConsecutiveDeclarations:
   Enabled: true
   AcrossEmptyLines: true
@@ -27,40 +21,25 @@ AlignConsecutiveDeclarations:
 
 AlignTrailingComments: true
 
-# --- Constructor Layout (The "Leading Comma" Style) ---
-# Puts the colon and commas at the start of the line
+# --- Constructor Layout ---
 BreakConstructorInitializers: BeforeComma
-# Forces each initializer onto its own line
-PackConstructorInitializers: Never
-# Matches the indentation of your class body
+# 'Never' is deprecated in newer versions, using 'BinPack: false' logic
+PackConstructorInitializers: BinPack
 ConstructorInitializerIndentWidth: 4
 
 # --- Control Statements (Single Line) ---
-# This allows: if (a) return; 
 AllowShortIfStatementsOnASingleLine: AllIfsAndElse
-# This allows: while (true);
 AllowShortLoopsOnASingleLine: true
-# This allows: int getX() { return x; }
 AllowShortFunctionsOnASingleLine: Inline
 
 # --- Extra Cleanliness ---
-# Ensures braces are on the same line (Attach)
 BreakBeforeBraces: Attach
-# Keep your line length reasonable
 ColumnLimit: 100
-# Max consecutive empty lines to keep (Prevents "Swiss Cheese" code)
 MaxEmptyLinesToKeep: 1
 
 # --- Header Management ---
-# Keeps your includes tidy by alphabetizing them. 
-# This prevents duplicate includes and makes finding a specific header much faster.
 SortIncludes: true
-
-# This is the "Cleanup" mode for headers. It merges multiple blocks of includes 
-# together and then re-sorts them into logical categories (e.g., System headers 
-# <vector> vs. Local headers "student.h").
 IncludeBlocks: Regroup
 
 # Ensure modern C++ support
 Standard: Latest
----
