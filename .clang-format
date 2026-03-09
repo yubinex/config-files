@@ -10,27 +10,28 @@ NamespaceIndentation: All
 # --- Pointer Alignment ---
 PointerAlignment: Right
 
-# --- Column Alignment ---
-# Simplified for compatibility
-AlignConsecutiveAssignments: AcrossEmptyLines
+# --- Initialization Spacing ---
+# This creates: Vector3 { a.x ... };
+Cpp11BracedListStyle: false
 
+# --- Column Alignment ---
+AlignConsecutiveAssignments: AcrossEmptyLines
 AlignConsecutiveDeclarations:
   Enabled: true
   AcrossEmptyLines: true
   AlignFunctionDeclarations: false
-
 AlignTrailingComments: true
 
 # --- Constructor Layout ---
 BreakConstructorInitializers: BeforeComma
-# 'Never' is deprecated in newer versions, using 'BinPack: false' logic
 PackConstructorInitializers: BinPack
 ConstructorInitializerIndentWidth: 4
 
-# --- Control Statements (Single Line) ---
-AllowShortIfStatementsOnASingleLine: AllIfsAndElse
-AllowShortLoopsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: Inline
+# --- Control Statements & Functions (Force Multi-line) ---
+# This prevents your operator+ from collapsing into one line
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
 
 # --- Extra Cleanliness ---
 BreakBeforeBraces: Attach
