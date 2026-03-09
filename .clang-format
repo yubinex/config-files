@@ -35,6 +35,14 @@ PackConstructorInitializers: Never
 # Matches the indentation of your class body
 ConstructorInitializerIndentWidth: 4
 
+# --- Control Statements (Single Line) ---
+# This allows: if (a) return; 
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+# This allows: while (true);
+AllowShortLoopsOnASingleLine: true
+# This allows: int getX() { return x; }
+AllowShortFunctionsOnASingleLine: Inline
+
 # --- Extra Cleanliness ---
 # Ensures braces are on the same line (Attach)
 BreakBeforeBraces: Attach
