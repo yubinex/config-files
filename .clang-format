@@ -15,12 +15,16 @@ PointerAlignment: Right
 Cpp11BracedListStyle: false
 
 # --- Column Alignment ---
-AlignConsecutiveAssignments: AcrossEmptyLines
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+
 AlignConsecutiveDeclarations:
   Enabled: true
-  AcrossEmptyLines: true
-  AlignFunctionDeclarations: false
-AlignTrailingComments: true
+  AcrossEmptyLines: false
+  AcrossComments: false
 
 # --- Constructor Layout ---
 BreakConstructorInitializers: BeforeComma
